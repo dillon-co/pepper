@@ -1,1 +1,2 @@
-Sidekiq::Cron::Job.create(name: 'SMS - worker - every sunday     ', cron: '1 * * * 6', klass: 'SmsWorker')
+Sidekiq::Cron::Job.create(name: 'SMS - worker - every sunday ', cron: '* * * * *', klass: 'SmsWorker')
+

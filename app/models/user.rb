@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  belongs_to :team
   before_save :validate_number
   before_create :set_order_number
 
@@ -11,10 +12,11 @@ class User < ActiveRecord::Base
   end 
 
   def self.find_next_person
-    this_person = where(is_next: true).first
+    this_person = where(is_next: true).first || User.first
     next_person = this_person.find_next_person
     this_person.update(is_next: false)
     next_person.update(is_next: true)
+    return this_person
   end  
 
   def find_next_person
