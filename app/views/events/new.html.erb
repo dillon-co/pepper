@@ -1,0 +1,11 @@
+<%= form_for @event do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :date %><br>
+  <%= f.datetime_select :date, ampm: true %><br>
+  <%= f.label :description %><br>
+  <%= f.text_area :description %><br>
+  <%= f.label "What do you need?(seperate by commas)" %><br>
+  <%= f.text_area :supplies %><br><br>
+  <%= f.submit %>
+<% end %>  

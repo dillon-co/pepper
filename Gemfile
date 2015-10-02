@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sinatra', :require => nil
 gem 'redis-rails', '~> 4.0.0'
 gem 'devise'
+gem "better_errors"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

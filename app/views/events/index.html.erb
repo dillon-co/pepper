@@ -1,0 +1,4 @@
+<% @events.each do |event| %>
+  <h3><%= event.title %></h2>
+  <h4>On: <%= event.date.strftime('%A, %m/%d at %l:%M %P') %></h3><br><hr><br>
+<% end %>  

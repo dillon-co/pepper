@@ -1,12 +1,23 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   devise_for :teams, controllers: {
     sessions: 'teams/sessions'
   }
+  resources :events
+
+  get 'users/new'
+
+  get 'users/index'
+
+  get 'users/edit'
+
+  get 'users/show'
+
+  root to: 'twilio#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
-  root to: 'twilio#home'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
