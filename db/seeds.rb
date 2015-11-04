@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-users = User.create([{ name: 'Dillon', number: '8018242592' },
-                     { name: "Dillena", number: '8018242592', girl: true },
-                     { name: 'dillon2', number: '8018242592'},
-                     { name: 'dillena2', number: '8018242592', girl: true}])
+users = User.create([{ name: 'testguy1', number: '8018242592' },
+                     { name: 'testguy2', number: '8018242592'},
+                     { name: "testgirl1", number: '8018242592', girl: true },
+                     { name: 'testgirl2', number: '8018242592', girl: true}])
