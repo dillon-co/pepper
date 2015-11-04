@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20150924202847) do
   create_table "events", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.datetime "date"
-    t.string   "title"
-    t.text     "description"
-    t.text     "supplies"
+    t.datetime "date",        null: false
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.text     "supplies",    null: false
   end
 
   create_table "teams", force: :cascade do |t|
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20150924202847) do
     t.string   "message",                      null: false
     t.integer  "order_number", default: 0,     null: false
     t.boolean  "is_next",      default: false
+    t.boolean  "girl",         default: false
+    t.boolean  "available",    default: true
   end
 
 end

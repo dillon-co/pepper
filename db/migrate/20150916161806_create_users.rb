@@ -8,6 +8,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :message, null: false
       t.integer :order_number, null: false, default: 0
       t.boolean :is_next, default: false
+      t.boolean :girl, default: false
+      t.boolean :available, default: true
     end
   end
 end

@@ -1,7 +1,32 @@
 class User < ActiveRecord::Base
   belongs_to :team
   before_save :validate_number
-  before_create :set_order_number
+  after_save :set_users_to_available
+  before_create :set_order_number, :create_message
+
+  def create_message
+    if self.girl == true
+      self.message = "#{self.name}, It looks like it's your turn to help plan the activity next thursday. :)"
+    else
+      self.message = "#{self.name}, Your machismo has earned you a chance to show off your leadership skills, you get to plan next thursday's activity!"
+    end
+  end  
+
+  def set_users_to_available
+    return if User.where(available: true).any?
+    User.update_all(available: true)  
+  end  
+
+  def self.pair
+    paired_array = []
+    girl = User.where(girl: true, available: true).sample || User.where(girl: true).sample
+    boy = User.where(girl: false, available: true).sample || User.where(girl: false).sample
+    paired_array << girl
+    paired_array << boy
+    girl.update(available: false)
+    boy.update(available: false)
+    paired_array
+  end 
 
   def validate_number
     return false unless self.number
@@ -24,7 +49,7 @@ class User < ActiveRecord::Base
   end  
 
   def set_order_number
-    self.order_number = (User.all.collect(&order_number).sort.last || 0) + 1
+    self.order_number = (User.all.collect(&:order_number).sort.last || 0) + 1
   end  
 
 end
