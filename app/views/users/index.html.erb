@@ -1,2 +1,14 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Boys</h1>
+<% @boys.each do |boy| %>
+  <%= @boy_counter %>
+  <%= boy.name %>
+  <%= boy.number %><br>
+  <% @boy_counter += 1 %>
+<% end %> <hr>
+<h1>Girls</h1>
+<% @girls.each do |girl| %>
+  <%= @girl_counter %>
+  <%= girl.name %>
+  <%= girl.number %><br>
+  <% @girl_counter += 1 %>
+<% end %>  

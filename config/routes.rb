@@ -7,13 +7,7 @@ Rails.application.routes.draw do
   }
   resources :events
 
-  get 'users/new'
-
-  get 'users/index'
-
-  get 'users/edit'
-
-  get 'users/show'
+  resources :users
 
   root to: 'twilio#home'
   # The priority is based upon order of creation: first created -> highest priority.

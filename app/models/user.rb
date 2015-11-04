@@ -51,5 +51,4 @@ class User < ActiveRecord::Base
   def set_order_number
     self.order_number = (User.all.collect(&:order_number).sort.last || 0) + 1
   end  
-
 end

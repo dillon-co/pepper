@@ -1,0 +1,12 @@
+<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div><br><br><br>
+<% end %>
+<%= form_for @user do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br><br>
+  <%= f.label :number %><br>
+  <%= f.text_field :number %><br><br>
+  <%= f.label "Girl?" %><br>
+  <%= f.check_box :girl %><br><br>
+  <%= f.submit "Add Member" %>
+<% end %>
