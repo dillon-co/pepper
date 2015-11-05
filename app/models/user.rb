@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   belongs_to :team
   before_save :validate_number
-  after_save :set_users_to_available
+  after_save :set_users_to_available, :create_message
   before_create :set_order_number, :create_message
 
   def create_message
@@ -13,10 +13,22 @@ class User < ActiveRecord::Base
   end  
 
   def set_users_to_available
-    return if User.where(available: true).any?
-    User.update_all(available: true)  
+    unless User.where(available: true, girl: true).any?
+      User.where(girl: true).each do |girl|
+        girl.update(available: true)
+      end    
+    end
+    unless User.where(available: true, girl: false).any?
+      User.where(girl: false).each do |boy|
+        boy.update(available: true)
+      end    
+    end    
   end  
 
+  def paired_message(user)
+    "#{message} You are paired with #{user.name} this week, and their number is #{user.number}"
+  end  
+    
   def self.pair
     paired_array = []
     girl = User.where(girl: true, available: true).sample || User.where(girl: true).sample

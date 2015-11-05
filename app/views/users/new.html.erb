@@ -1,5 +1,5 @@
 <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div><br><br><br>
+        <div class="alert alert-success"><%= value %></div><br><br><br>
 <% end %>
 <%= form_for @user do |f| %>
   <%= f.label :name %><br>
