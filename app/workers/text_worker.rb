@@ -4,7 +4,6 @@ class SmsWorker
     User.pair.each do |user|
       msg = user.paired_message(User.pair[User.pair.index(user).to_i-1])
       number = user.number
-      api = Twilio::REST::Client.new('AC878088af0693b184b942532a7566bd74', '5953cb241200d6f56a7505c71d0e79c6')
       api = Twilio::REST::Client.new(ENV['ACTIVITIES_ACCOUNT_SID'], ENV['ACTIVITIES_AUTH_TOKEN'])
       messages = msg.scan(/.{1,800}/m)
       messages.each do |message|
