@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  # before_action :authenticate_team
   belongs_to :team
   before_save :validate_number
   after_save :set_users_to_available, :create_message

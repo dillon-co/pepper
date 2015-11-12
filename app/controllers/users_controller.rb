@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_team!
+
   def new
     @user = User.new
   end
