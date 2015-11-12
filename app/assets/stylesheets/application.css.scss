@@ -12,5 +12,12 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-sprockets";
+
+
+.navbar{
+  .navbar-brand{
+    font-size: 30px
+  }
+}

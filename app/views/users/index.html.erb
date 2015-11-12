@@ -1,14 +1,12 @@
-<h1>Boys</h1>
-<% @boys.each do |boy| %>
-  <%= @boy_counter %>
-  <%= boy.name %>
-  <%= boy.number %><br>
-  <% @boy_counter += 1 %>
-<% end %> <hr>
-<h1>Girls</h1>
-<% @girls.each do |girl| %>
-  <%= @girl_counter %>
-  <%= girl.name %>
-  <%= girl.number %><br>
-  <% @girl_counter += 1 %>
-<% end %><hr> 
+<div class="jumbotron row">
+  <span class="col-md-5"><h1>Boys</h1>
+  <% @boys.each do |boy| %>
+    <h5><%= @boy_counter %>: <%= boy.name %>- <%= boy.number %><br></h5>
+    <% @boy_counter += 1 %>
+  <% end %></span>
+  <span class="col-md-5"><h1>Girls</h1>
+  <% @girls.each do |girl| %>
+    <h5><%= @girl_counter %>: <%= girl.name %>- <%= girl.number %><br></h5>
+    <% @girl_counter += 1 %>
+  <% end %></span> 
+</div>
