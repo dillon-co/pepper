@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
     girl.update(available: false)
     boy.update(available: false)
     paired_array
-  end 
+  end   
 
   def validate_number
     return false unless self.number
