@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   devise_for :teams, controllers: {
     sessions: 'teams/sessions'
   }
-  resources :events
 
   resources :users
 
+  resources :tasks
+
+  resources :events
   root to: 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

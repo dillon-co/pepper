@@ -26,10 +26,14 @@ ActiveRecord::Schema.define(version: 20151201212058) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "name",       null: false
-    t.text     "message",    null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "name",                     null: false
+    t.text     "message",                  null: false
+    t.integer  "time",                     null: false
+    t.integer  "day_of_week",  default: 1
+    t.integer  "day_of_month", default: 1
+    t.string   "cron_time",                null: false
   end
 
   create_table "teams", force: :cascade do |t|
