@@ -1,6 +1,5 @@
 Task.all.each do |task|
-  t = task.name.upcase
-  class t
+  class CustomTask
     include Sidekiq::Worker
     def perform
       User.all.each do |user|
