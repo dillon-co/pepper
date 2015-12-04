@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     sessions: 'teams/sessions'
   }
 
+  resources :messages
+
   resources :users
 
   resources :tasks
