@@ -12,9 +12,9 @@
 
 
 </div>
-  <br><br><%= form_for Message.new do |f| %>
-  <%= f.label "Send them all a message" %><br>
-  <%= f.text_area :message %><br>
-  <%= f.submit "Send"%>
+  <%= form_for Message.new do |f| %>
+  <h3><%= f.label "Send a quick message to everyone" %></h3>
+  <%= f.text_area :message %><br><br>
+  <%= f.submit "Send", class: 'btn btn-success'%>
   <% end %>
 
