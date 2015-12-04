@@ -9,4 +9,12 @@
     <h5><%= @girl_counter %>: <%= girl.name %>- <%= girl.number %><br></h5>
     <% @girl_counter += 1 %>
   <% end %></span> 
+
+
 </div>
+  <br><br><%= form_for Task.new do |f| %>
+  <%= f.label "Send them all a message" %><br>
+  <%= f.text_area :message %><br>
+  <%= f.submit "Send"%>
+  <% end %>
+

@@ -16,11 +16,11 @@ class Task < ActiveRecord::Base
     api = Twilio::Rest::Client.new(ENV['ACTIVITIES_ACCOUNT_SID'], ENV['ACTIVITIES_AUTH_TOKEN'])
     messages = msg.scan(/.{1,800}/m)
     messages.each do |message|
-      api.messages.create {
+      api.messages.create(
         body: message,
         to: number,
         from: +18018713392
-      }
+      )
     end
   end
     
