@@ -3,6 +3,7 @@ class Team < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :users
   has_many :tasks
+  has_many :messages
   has_many :events
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
