@@ -1,6 +1,14 @@
+ <% flash.each do |key, value| %>
+          <div class="alert"><%= value %></div><br><br><br>
+  <% end %>
+
   <%= form_for @team do |f| %>
     <%= f.check_box :weekly_reminder_enabled %>
-    <%= f.label "Turn On Weekly Event Planning" %><br>
+    <% if @team.weekly_reminder_enabled? %>
+      <%= f.label "Turn Off Weekly Event Planning" %><br>
+    <% else %>  
+      <%= f.label "Turn on weekly event planning" %>
+    <% end %>  
     <%= f.submit "Save" %>
   <% end %>
 

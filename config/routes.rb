@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :teams
 
+  post 'teams/update/:id' => 'teams#update'
+
   resources :messages
 
   resources :users
