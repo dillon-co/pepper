@@ -1,7 +1,7 @@
 class SmsWorker
   include Sidekiq::Worker
   def perform
-    if Team.find_by(params[:id]).is_on
+    if Team.find_by(params[:id]).weekly_reminder_enabled
       User.pair.each do |user|
         msg = user.paired_message(User.pair[User.pair.index(user).to_i-1])
         number = user.number

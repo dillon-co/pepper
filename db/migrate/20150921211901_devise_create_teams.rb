@@ -19,7 +19,7 @@ class DeviseCreateTeams < ActiveRecord::Migration
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
-       t.boolean :is_on, default: false
+      t.boolean :weekly_reminder_enabled, default: false
 
       ## Confirmable
       # t.string   :confirmation_token
