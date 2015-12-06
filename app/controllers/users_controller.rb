@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def index
     @boy_counter = 1
     @girl_counter = 1
+    @team = Team.find_by(params[:id])
     @boys = User.where(girl: false)
     @girls = User.where(girl: true)
   end

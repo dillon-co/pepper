@@ -19,6 +19,8 @@ class DeviseCreateTeams < ActiveRecord::Migration
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
+       t.boolean :is_on, default: false
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
