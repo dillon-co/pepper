@@ -1,9 +1,9 @@
  <% flash.each do |key, value| %>
-          <div class="alert"><%= value %></div><br><br><br>
+          <div class="alert alert-success"><%= value %></div>
   <% end %>
 
   <%= form_for @team do |f| %>
-    <%= f.check_box :weekly_reminder_enabled %>
+    <%= f.check_box :weekly_reminder_enabled, data: {toggle: 'toggle'} %>
     <% if @team.weekly_reminder_enabled? %>
       <%= f.label "Turn Off Weekly Event Planning" %><br>
     <% else %>  
@@ -31,3 +31,7 @@
   <%= f.submit "Send", class: 'btn btn-success'%>
   <% end %>
 
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js">
+
+</script>
