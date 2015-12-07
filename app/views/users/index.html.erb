@@ -3,11 +3,11 @@
   <% end %>
 
   <%= form_for @team do |f| %>
-    <%= f.check_box :weekly_reminder_enabled, data: {toggle: 'toggle'} %>
+    <%= f.check_box :weekly_reminder_enabled, data: {toggle: 'toggle'}, id: 'weekly-reminder' %>
     <% if @team.weekly_reminder_enabled? %>
-      <%= f.label "Turn Off Weekly Event Planning" %><br>
+      <%= f.label "Turn Off Weekly Events" %><br>
     <% else %>  
-      <%= f.label "Turn on weekly event planning" %>
+      <%= f.label "Turn on weekly events" %>
     <% end %>  
     <%= f.submit "Save" %>
   <% end %>
@@ -33,5 +33,7 @@
 
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js">
+  $('#weekly-reminder').click(function(){
 
+  })
 </script>
