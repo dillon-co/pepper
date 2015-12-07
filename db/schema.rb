@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204162107) do
+ActiveRecord::Schema.define(version: 20151207223023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +23,19 @@ ActiveRecord::Schema.define(version: 20151204162107) do
     t.string   "title",       null: false
     t.text     "description", null: false
     t.text     "supplies",    null: false
+    t.integer  "team_id"
   end
+
+  add_index "events", ["team_id"], name: "index_events_on_team_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "message",    null: false
+    t.integer  "team_id"
   end
+
+  add_index "messages", ["team_id"], name: "index_messages_on_team_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
     t.datetime "created_at",               null: false
@@ -39,8 +45,11 @@ ActiveRecord::Schema.define(version: 20151204162107) do
     t.integer  "time",                     null: false
     t.integer  "day_of_week",  default: 1
     t.integer  "day_of_month", default: 1
-    t.string   "cron_time",                null: false
+    t.string   "cron_time"
+    t.integer  "team_id"
   end
+
+  add_index "tasks", ["team_id"], name: "index_tasks_on_team_id", using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.string   "email",                   default: "",    null: false
@@ -71,6 +80,13 @@ ActiveRecord::Schema.define(version: 20151204162107) do
     t.boolean  "is_next",      default: false
     t.boolean  "girl",         default: false
     t.boolean  "available",    default: true
+    t.integer  "team_id"
   end
 
+  add_index "users", ["team_id"], name: "index_users_on_team_id", using: :btree
+
+  add_foreign_key "events", "teams"
+  add_foreign_key "messages", "teams"
+  add_foreign_key "tasks", "teams"
+  add_foreign_key "users", "teams"
 end
