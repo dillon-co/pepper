@@ -6,4 +6,6 @@
   <% elsif task.time == "Monthly" %>
     <h3> On the <%= task.day_of_month.ordinalize %></h3>
   <% end %>
-<% end %><hr>
+  <%= link_to "Show Me", task_path(task.id), class: 'btn btn-success' %> 
+  <hr>
+<% end %>
