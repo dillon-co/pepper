@@ -17,3 +17,9 @@ class WeeklyReminderWorker
   end     
 end 
 
+
+### In case the above fails ###
+ 
+ # Team.all.each do |team|
+ #      if team.weekly_reminder_enabled
+ #        User.pair.each do |user|
