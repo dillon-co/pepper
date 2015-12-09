@@ -8,14 +8,15 @@
 </head>
 <body>
   <%= render "layouts/navbar" %>
-<div class="container">
-<%= yield %>
-</div>
-<div class="footer">
-  <hr>
-  <div class="footnote-b">v
-    <h6><span class="glyphicon glyphicon-copyright-mark"></span>Dillon Cortez</h1>
+  <%= yield %>
+  <div class="footer">
+    <hr>
+    <div class="footnote-a">
+      <h6></h6>
+    </div>  
+    <div class="footnote-b">
+      <h6>&copy; Dillon Cortez</h1>
+    </div>  
   </div>  
-</div>  
 </body>
 </html>

@@ -17,13 +17,16 @@
 @import "bootstrap-sprockets";
 
 .navbar{
+  margin-bottom: 0px;
+  margin-right: 0px;
+  border-radius: 0px;
   .navbar-brand{
     font-size: 30px
   }
 }
 
 .home-page{
-  min-height: 700px;
+  margin-top: 0px;
   .jumbo{
     background-image: image-url(new_zeland_thunder);
     background-attachment: fixed; 
@@ -31,7 +34,6 @@
     background-position: center center;
     vertical-align: top;
     color: white;
-    float: top;
     .names{
       float: center;
       .jumbotron{
@@ -39,6 +41,10 @@
         background-color: rgba(0,0,0,0.5)
       }
       .girl-tron{
+        text-align: center;
+        // margin-right: 25px;
+      }
+      .boy-tron{
         text-align: right;
       }
     }

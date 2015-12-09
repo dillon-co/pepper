@@ -2,10 +2,9 @@
    <% flash.each do |key, value| %>
             <div class="alert alert-success"><%= value %></div>
     <% end %>
-
   <div class="jumbo jumbotron row">
-    <div class="names">
-      <div class="jumbotron col-md-5"><h1>Boys</h1>
+    <div class="names container">
+      <div class="jumbotron boy-tron col-md-5"><h1>Boys</h1>
         <% @boys.each do |boy| %>
           <h5><%= @boy_counter %>: <%= boy.name %>- <%= boy.number %><br></h5>
           <% @boy_counter += 1 %>
@@ -18,6 +17,7 @@
       </div>
     </div>
   </div>
+  <div class="container">
   <span class="col-md-5">
     <%= form_for Message.new do |f| %>
     <h3><%= f.label "Send a quick message to everyone" %></h3>
@@ -33,7 +33,7 @@
     <% end %><br>
   </span> 
 </div>
-
+</div>
 
 
 
