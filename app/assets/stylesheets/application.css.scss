@@ -11,6 +11,7 @@
  * file per style scope.
  *= require_tree .
  *= require_self
+
  */
 @import "bootstrap";
 @import "bootstrap-sprockets";
@@ -21,20 +22,34 @@
   }
 }
 
-
-.jumbo{
-  background-image: image-url(new_zeland_thunder);
-  background-attachment: fixed; 
-  background-size: cover;
-  background-position: center center;
-  vertical-align: top;
-  color: white;
-  float: top;
-  .names{
-    float: center;
-    .jumbotron{
-      border-radius: 0px;
-      background-color: rgba(0,0,0,0.5)
+.home-page{
+  min-height: 700px;
+  .jumbo{
+    background-image: image-url(new_zeland_thunder);
+    background-attachment: fixed; 
+    background-size: cover;
+    background-position: center center;
+    vertical-align: top;
+    color: white;
+    float: top;
+    .names{
+      float: center;
+      .jumbotron{
+        border-radius: 0px;
+        background-color: rgba(0,0,0,0.5)
+      }
+      .girl-tron{
+        text-align: right;
+      }
     }
   }
+}  
+
+.footnote-a{
+  float:left;
+}
+
+.footnote-b{
+  float:right;
+  margin-right: 50px;
 }

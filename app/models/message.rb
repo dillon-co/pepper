@@ -1,3 +1,4 @@
+require 'send_message_to_all_users_worker'
 class Message < ActiveRecord::Base
   belongs_to :team
   after_save :send_to_all_users
