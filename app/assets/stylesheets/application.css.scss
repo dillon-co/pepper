@@ -20,3 +20,21 @@
     font-size: 30px
   }
 }
+
+
+.jumbo{
+  background-image: image-url(new_zeland_thunder);
+  background-attachment: fixed; 
+  background-size: cover;
+  background-position: center center;
+  vertical-align: top;
+  color: white;
+  float: top;
+  .names{
+    float: center;
+    .jumbotron{
+      border-radius: 0px;
+      background-color: rgba(0,0,0,0.5)
+    }
+  }
+}
