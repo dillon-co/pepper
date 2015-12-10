@@ -1,4 +1,5 @@
 class CreateTasks < ActiveRecord::Migration
+
   def change
     create_table :tasks do |t|
 
@@ -9,6 +10,7 @@ class CreateTasks < ActiveRecord::Migration
       t.integer :day_of_week, default: 1
       t.integer :day_of_month, default: 1
       t.string :cron_time
+      t.boolean :enabled, default: true
     end
   end
 end

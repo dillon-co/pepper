@@ -6,11 +6,11 @@ class WeeklyReminderWorker
         user.pair.each do |user|
           msg = user.paired_message(User.pair[User.pair.index(user).to_i-1])
           number = user.number
-          TextWorker.perform(number, msg)
+          TextWorker.perform_async(number, msg)
         end
         leaders_message = "#{User.pair[0].name} and #{User.pair[1].name} are planning the event next week."
         [number1, number2, number3].each do |num|
-          TextWorker.perform(num, leader_message)
+          TextWorker.perform_async(num, leader_message)
         end     
       end
     end    
