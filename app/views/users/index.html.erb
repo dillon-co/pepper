@@ -31,17 +31,19 @@
         <%= f.check_box :weekly_reminder_enabled, data: {toggle: 'toggle', onstyle: 'success'}, id: 'weekly-reminder' %>
         <%= f.submit "Save" %>
       <% end %><br>
-      <hr>
-      <div class="container">
-        <h2>Your Current Tasks</h2>  
-        <% @tasks.each do |task| %>
-          <h3><%= task.name %><h3>
-          <h5><%= task.time %></h5>  
-          <%= link_to "View Task", task_path(task), class: 'btn btn-success' %>
-        <% end %>  
-      </div>  
     </span> 
   </div>
+  <div class="container">
+    <hr>
+    <h2>Your Current Tasks</h2>  
+    <% @tasks.each do |task| %>
+      <div class="panel panel-default col-md-4">
+        <h3 class="panel-title"><%= task.name %><h3>
+        <h5><%= task.time %></h5>  
+        <%= link_to "View Task", task_path(task), class: 'btn btn-success' %>
+      </div>  
+    <% end %>  
+  </div>  
 
 </div>
 
