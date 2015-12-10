@@ -38,14 +38,15 @@ ActiveRecord::Schema.define(version: 20151207223023) do
   add_index "messages", ["team_id"], name: "index_messages_on_team_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "name",                     null: false
-    t.text     "message",                  null: false
-    t.string   "time",                     null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "name",                        null: false
+    t.text     "message",                     null: false
+    t.string   "time",                        null: false
     t.integer  "day_of_week",  default: 1
     t.integer  "day_of_month", default: 1
     t.string   "cron_time"
+    t.boolean  "enabled",      default: true
     t.integer  "team_id"
   end
 

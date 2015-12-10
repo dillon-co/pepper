@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @team = Team.find_by(params[:id])
     @boys = User.where(girl: false)
     @girls = User.where(girl: true)
+    @tasks = Task.where(enabled: true)
   end
 
   def edit

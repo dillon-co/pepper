@@ -18,21 +18,31 @@
     </div>
   </div>
   <div class="container">
-  <span class="col-md-5">
-    <%= form_for Message.new do |f| %>
-    <h3><%= f.label "Send a quick message to everyone" %></h3>
-    <%= f.text_area :message %><br><br>
-    <%= f.submit "Send", class: 'btn btn-success'%>
-    <% end %>
-  </span>
-  <span class="col-md-5">
-    <%= form_for @team do |f| %>
-      <h3><%= f.label "Weekly events" %></h3>
-      <%= f.check_box :weekly_reminder_enabled, data: {toggle: 'toggle', onstyle: 'success'}, id: 'weekly-reminder' %>
-      <%= f.submit "Save" %>
-    <% end %><br>
-  </span> 
-</div>
+    <span class="col-md-5">
+      <%= form_for Message.new do |f| %>
+        <h3><%= f.label "Send a quick message to everyone" %></h3>
+        <%= f.text_area :message %><br><br>
+        <%= f.submit "Send", class: 'btn btn-success'%>
+      <% end %>
+    </span>
+    <span class="col-md-5">
+      <%= form_for @team do |f| %>
+        <h3><%= f.label "Weekly events" %></h3>
+        <%= f.check_box :weekly_reminder_enabled, data: {toggle: 'toggle', onstyle: 'success'}, id: 'weekly-reminder' %>
+        <%= f.submit "Save" %>
+      <% end %><br>
+      <hr>
+      <div class="container">
+        <h2>Your Current Tasks</h2>  
+        <% @tasks.each do |task| %>
+          <h3><%= task.name %><h3>
+          <h5><%= task.time %></h5>  
+          <%= link_to "View Task", task_path(task), class: 'btn btn-success' %>
+        <% end %>  
+      </div>  
+    </span> 
+  </div>
+
 </div>
 
 
