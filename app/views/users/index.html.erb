@@ -32,18 +32,21 @@
         <%= f.submit "Save" %>
       <% end %><br>
     </span> 
-  </div>
-  <div class="container">
-    <hr>
-    <h2>Your Current Tasks</h2>  
-    <% @tasks.each do |task| %>
-      <div class="panel panel-default col-md-4">
-        <h3 class="panel-title"><%= task.name %><h3>
-        <h5><%= task.time %></h5>  
-        <%= link_to "View Task", task_path(task), class: 'btn btn-success' %>
-      </div>  
-    <% end %>  
-  </div>  
+  </div><br>
+  <div class="jumbo">
+    <div class="container jumbotron">
+      <h2>Your Current Tasks</h2><br>
+      <% @tasks.each do |task| %>
+        <div class="container col-md-4">
+         <!-- <div class="container"> -->
+          <h3 class="panel-title"><%= task.name %><h3>
+          <h5><%= task.time %></h5>  
+          <%= link_to "View Task", task_path(task), class: 'btn btn-success' %><hr>
+        <!-- </div> -->
+        </div>  
+      <% end %>  
+    </div>
+  </div>    
 
 </div>
 

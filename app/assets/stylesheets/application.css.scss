@@ -34,12 +34,12 @@
     background-position: center center;
     vertical-align: top;
     color: white;
+    .jumbotron{
+      border-radius: 0px;
+      background-color: rgba(0,0,0,0.5)
+    }
     .names{
       float: center;
-      .jumbotron{
-        border-radius: 0px;
-        background-color: rgba(0,0,0,0.5)
-      }
       .girl-tron{
         text-align: center;
         // margin-right: 25px;
