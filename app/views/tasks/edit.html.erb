@@ -1,7 +1,9 @@
 <div class="container">
-  <h1>Edit This Task </h1>
-  <hr>
   <%= form_for @task do |f| %>
+  <span><h1>Edit This Task </h1></span>
+    <span><%= f.label "Task is" %>
+    <%= f.check_box :enabled, data: {toggle: 'toggle', onstyle: 'success'} %></span><br><br>
+  <hr>
     <%= f.label  "Title*" %></br>
     <%= f.text_field :name %></br></br>
     <%= f.label "Message*" %></br>
@@ -15,3 +17,7 @@
     <%= f.submit "creat Task", class: 'btn btn-success' %>
   <% end %> 
 </div>
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js">
+</script>
