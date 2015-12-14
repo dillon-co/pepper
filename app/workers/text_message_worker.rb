@@ -1,3 +1,5 @@
+require 'twilio-ruby'
+
 class TextWorker
   include Sidekiq::Worker
   def perform(number, msg)
