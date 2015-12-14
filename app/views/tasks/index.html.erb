@@ -1,13 +1,15 @@
 <div class="container">
   <% @tasks.each do |task| %>
-    <h2><%= task.name %></h2>
-    <h3>This task is <%= task.time %></h3>
-    <% if task.time == "Weekly" %>
-      <h3> Every <%= task.day_of_week %></h3>
-    <% elsif task.time == "Monthly" %>
-      <h3> On the <%= task.day_of_month.ordinalize %></h3>
-    <% end %>
-    <%= link_to "Show Me", task_path(task.id), class: 'btn btn-success' %> 
-    <hr>
+    <div class="col-md-4">
+      <h2><%= task.name %></h2>
+      <h4>This task is <%= task.time %></h4>
+      <% if task.time == "Weekly" %>
+        <h4> Every <%= task.day_of_week %></h4>
+      <% elsif task.time == "Monthly" %>
+        <h4> On the <%= task.day_of_month.ordinalize %></h4>
+      <% end %>
+      <%= link_to "Show Me", task_path(task.id), class: 'btn btn-success' %> 
+      <hr>
+    </div>
   <% end %>
 </div>
