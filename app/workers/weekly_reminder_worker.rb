@@ -2,10 +2,8 @@ class WeeklyReminderWorker
   include Sidekiq::Worker
   def perform
     paired_users = []
-    Team.where(weekly_reminder_enabled: true).each do |team| 
-      team.users.pair.each do |user|
-        paired_users << user
-      end
+    Team.where(weekly_reminder_enabled: true).each |team| 
+      team.users.pair.each { |user| paired_users << user }
       msg = user.paired_message(User.pair[User.pair.index(user).to_i-1])
       number = user.number
       TextWorker.perform_async(number, msg)
