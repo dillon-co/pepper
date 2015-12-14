@@ -42,6 +42,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :message, :time, :day_of_month)
+    params.require(:task).permit(:name, :message, :time, :day_of_month, :enabled)
   end  
 end
