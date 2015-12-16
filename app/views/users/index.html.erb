@@ -25,6 +25,7 @@
         <%= f.text_area :message %><br><br>
         <%= f.submit "Send", class: 'btn btn-success'%>
       <% end %>
+      <h4>Or you can be selective :)</h4><%= link_to "Selective Message", new_message_path, class: 'btn btn-success' %>
     </span>
     <span class="col-md-5">
       <%= form_for @team do |f| %>

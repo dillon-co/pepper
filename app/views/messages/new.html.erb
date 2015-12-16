@@ -1,0 +1,14 @@
+<div class="container">
+	<%= form_for @message do |f| %>
+		<h2><%= f.label "Message" %></h2>
+		<%= f.text_area :message %><br>
+		<h3><%= f.label "Who do you want to send this to? (Leave blank to send to all)" %></h3><br>
+		<%= f.collection_check_boxes :user_ids, User.all, :id, :name do |b| %>
+		  <div class="collection-check-box col-md-4">
+	        <%= b.check_box %>
+	        <%= b.label %>
+	      </div>
+		<% end %><br>
+		<br><%= f.submit "Send", class: 'btn btn-success' %>
+	<% end %>
+</div>

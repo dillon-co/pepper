@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207223023) do
+ActiveRecord::Schema.define(version: 20151216202622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,13 +29,19 @@ ActiveRecord::Schema.define(version: 20151207223023) do
   add_index "events", ["team_id"], name: "index_events_on_team_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "message",    null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "message",                        null: false
+    t.text     "specific_users", default: "all"
     t.integer  "team_id"
   end
 
   add_index "messages", ["team_id"], name: "index_messages_on_team_id", using: :btree
+
+  create_table "messages_users", id: false, force: :cascade do |t|
+    t.integer "message_id", null: false
+    t.integer "user_id",    null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.datetime "created_at",                  null: false
@@ -45,8 +51,8 @@ ActiveRecord::Schema.define(version: 20151207223023) do
     t.string   "time",                        null: false
     t.integer  "day_of_week",  default: 1
     t.integer  "day_of_month", default: 1
-    t.string   "cron_time"
     t.boolean  "enabled",      default: true
+    t.string   "cron_time"
     t.integer  "team_id"
   end
 

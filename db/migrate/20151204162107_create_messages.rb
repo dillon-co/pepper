@@ -4,6 +4,7 @@ class CreateMessages < ActiveRecord::Migration
 
       t.timestamps null: false
       t.string :message, null: false
+      t.text :specific_users, default: 'all'
       
     end
   end
