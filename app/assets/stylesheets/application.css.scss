@@ -56,17 +56,25 @@
     }
     .panel{
       border-radius: 0px;
-      margin-right: 5px;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.7);
+      border-color: rgba(0,0,0,0);
     }
   }
 }  
 
-.footnote-a{
-  float:left;
+.footer{
+  background-color: #1C1A1A;
+  .footnote-a{
+    float:left;
+  }
+  .footnote-b{
+    float:right;
+    margin-right: 50px;
+  }
 }
 
-.footnote-b{
-  float:right;
-  margin-right: 50px;
+body{
+  background-color: #1C1A1A;
+  color: white;
 }
+
