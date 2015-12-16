@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'unicorn'
 gem 'sidekiq'
 gem 'twilio-ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
