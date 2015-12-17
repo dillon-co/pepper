@@ -40,10 +40,6 @@
     background-position: center center;
     vertical-align: top;
     color: white;
-    .jumbotron{
-      border-radius: 0px;
-      background-color: rgba(0,0,0,0.5)
-    }
     .names{
       float: center;
       .girl-tron{
@@ -53,11 +49,6 @@
       .boy-tron{
         text-align: right;
       }
-    }
-    .panel{
-      border-radius: 0px;
-      background-color: rgba(0,0,0,0.7);
-      border-color: rgba(0,0,0,0);
     }
   }
 }  
@@ -76,10 +67,23 @@
 body{
   background-color: #1C1A1A;
   color: white;
+  .jumbotron{
+    border-radius: 0px;
+    background-color: rgba(0,0,0,0.5)
+  }
+  .panel{
+    border-radius: 0px;
+    background-color: rgba(0,0,0,0.7);
+    border-color: rgba(0,0,0,0);
+    text-align: center;
+  }
+  hr{
+    border-color: #5cb85c;
+  }
   h1,h2{
     color: #5cb85c;;
   }
-  #task_time, #task_day_of_month, #task_day_of_week{
+  #task_time, #task_day_of_month, #task_day_of_week, #task_name, #task_message{
     color: black;
   }
 }
