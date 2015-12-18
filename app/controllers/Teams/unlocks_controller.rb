@@ -1,4 +1,4 @@
-class Teams::UnlocksController < Devise::UnlocksController
+class Team::UnlocksController < Devise::UnlocksController
   # GET /resource/unlock/new
   # def new
   #   super
