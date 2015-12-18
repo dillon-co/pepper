@@ -33,6 +33,10 @@
   margin-top: 0px;
   background-color: #1C1A1A;
   color: white; 
+  .jumbotron{
+    border-radius: 0px;
+    background-color: rgba(0,0,0,0.5)
+  }
   .jumbo{
     background-image: image-url(new_zeland_thunder); 
     background-attachment: fixed; 
