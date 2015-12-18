@@ -36,10 +36,10 @@
     </span> 
   </div><br>
   <div class="jumbo">
-    <div class="container">
+    <div class="container panel panel-default">
       <div class="panel panel-default"><h2>Your Current Tasks</h2></div><br>
       <% @tasks.each do |task| %>
-        <div class="panel panel-default container col-md-4">
+        <div class="container col-md-4">
          <!-- <div class="container"> -->
           <br><h2 class="panel-title"><%= task.name %><h2>
           <h5><%= task.time %></h5><br> 
