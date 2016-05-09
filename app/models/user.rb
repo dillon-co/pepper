@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id           :integer          not null, primary key
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  number       :string           not null
+#  name         :string           not null
+#  message      :string           not null
+#  order_number :integer          default(0), not null
+#  is_next      :boolean          default(FALSE)
+#  girl         :boolean          default(FALSE)
+#  available    :boolean          default(TRUE)
+#  team_id      :integer
+#
+
 class User < ActiveRecord::Base
   # before_action :authenticate_team
   has_and_belongs_to_many :messages

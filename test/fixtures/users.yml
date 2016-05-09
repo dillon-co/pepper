@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id           :integer          not null, primary key
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  number       :string           not null
+#  name         :string           not null
+#  message      :string           not null
+#  order_number :integer          default(0), not null
+#  is_next      :boolean          default(FALSE)
+#  girl         :boolean          default(FALSE)
+#  available    :boolean          default(TRUE)
+#  team_id      :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the

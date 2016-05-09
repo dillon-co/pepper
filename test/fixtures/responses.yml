@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: responses
+#
+#  id            :integer          not null, primary key
+#  user_number   :integer
+#  user_name     :string
+#  response_body :text
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_number: 1
+  user_name: MyString
+  response_body: MyText
+
+two:
+  user_number: 1
+  user_name: MyString
+  response_body: MyText

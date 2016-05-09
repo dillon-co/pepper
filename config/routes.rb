@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :task_delegations
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 

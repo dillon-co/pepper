@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216202622) do
+ActiveRecord::Schema.define(version: 20160509183847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,28 @@ ActiveRecord::Schema.define(version: 20151216202622) do
     t.integer "message_id", null: false
     t.integer "user_id",    null: false
   end
+
+  add_index "messages_users", ["message_id", "user_id"], name: "index_messages_users_on_message_id_and_user_id", using: :btree
+  add_index "messages_users", ["user_id", "message_id"], name: "index_messages_users_on_user_id_and_message_id", using: :btree
+
+  create_table "responses", force: :cascade do |t|
+    t.integer  "user_number"
+    t.string   "user_name"
+    t.text     "response_body"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "task_delegations", force: :cascade do |t|
+    t.integer  "team_id"
+    t.string   "event"
+    t.datetime "event_date"
+    t.text     "tasks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "task_delegations", ["team_id"], name: "index_task_delegations_on_team_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
     t.datetime "created_at",                  null: false

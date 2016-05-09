@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: messages
+#
+#  id             :integer          not null, primary key
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  message        :string           not null
+#  specific_users :text             default("all")
+#  team_id        :integer
+#
+
 require 'send_message_to_all_users_worker'
 require 'text_message_worker'
 class Message < ActiveRecord::Base 

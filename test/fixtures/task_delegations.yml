@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: task_delegations
+#
+#  id         :integer          not null, primary key
+#  team_id    :integer
+#  event      :string
+#  event_date :datetime
+#  tasks      :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event: MyString
+  tasks: MyText
+
+two:
+  event: MyString
+  tasks: MyText
