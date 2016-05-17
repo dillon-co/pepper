@@ -4,6 +4,7 @@ class DeviseCreateTeams < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.string :team_name, null: false
 
       ## Recoverable
       t.string   :reset_password_token
@@ -20,6 +21,7 @@ class DeviseCreateTeams < ActiveRecord::Migration
       t.inet     :last_sign_in_ip
 
       t.boolean :weekly_reminder_enabled, default: false
+
 
       ## Confirmable
       # t.string   :confirmation_token

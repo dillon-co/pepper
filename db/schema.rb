@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160509183847) do
     t.datetime "date",        null: false
     t.string   "title",       null: false
     t.text     "description", null: false
-    t.text     "supplies",    null: false
+    t.text     "tasks",       null: false
     t.integer  "team_id"
   end
 
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160509183847) do
   create_table "teams", force: :cascade do |t|
     t.string   "email",                   default: "",    null: false
     t.string   "encrypted_password",      default: "",    null: false
+    t.string   "team_name",                               null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

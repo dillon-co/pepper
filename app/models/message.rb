@@ -24,7 +24,7 @@ class Message < ActiveRecord::Base
       	TextWorker.perform_async(user.number, self.message)
       end	
   	else	
-      SendToAllUsersWorker.perform_async(self.message)  
+      SendToAllUsersWorker.perform_async(self.team, self.message)  
   	end
   end  
 end

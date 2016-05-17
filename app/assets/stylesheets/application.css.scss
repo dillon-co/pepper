@@ -25,25 +25,29 @@
   margin-right: 0px;
   border-radius: 0px;
   .navbar-brand{
-    font-size: 30px
+    font-size: 30px;
+    color: #99FF99;
   }
 }
 
 .home-page{
+  background-image: image-url(new_zeland_thunder); 
+  background-attachment: fixed; 
+  background-size: cover;
+  background-position: center center;
+  vertical-align: top;
+  color: white;
   margin-top: 0px;
-  background-color: #1C1A1A;
+  background-color: rgba(0,0,0,0.5);
   color: white; 
+  .message-row{
+    background-color: rgba(0,0,0,0.8);
+  }
   .jumbotron{
     border-radius: 0px;
     background-color: rgba(0,0,0,0.5)
   }
   .jumbo{
-    background-image: image-url(new_zeland_thunder); 
-    background-attachment: fixed; 
-    background-size: cover;
-    background-position: center center;
-    vertical-align: top;
-    color: white;
     .names{
       float: center;
       .girl-tron{
@@ -58,7 +62,6 @@
 }  
 
 .footer{
-  background-color: #1C1A1A;
   .footnote-a{
     float:left;
   }
@@ -76,19 +79,43 @@ body{
     background-color: rgba(0,0,0,0.5)
   }
   .panel{
-    border-radius: 0px;
+    border:none;
     background-color: rgba(0,0,0,0.7);
-    border-color: rgba(0,0,0,0);
     text-align: center;
   }
   hr{
     border-color: #5cb85c;
   }
-  h1,h2{
+  h1,h2, label{
     color: #5cb85c;;
   }
-  #task_time, #task_day_of_month, #task_day_of_week, #task_name, #task_message{
-    color: black;
+   input:focus, textarea:focus{
+    outline-color: #99FF99;
+  }
+
+  input, textarea{
+    border-color: rgba(0,0,0,0.7);
+    background-color: black;
+    color: #99FF99;
   }
 }
+
+.btn-success{
+  background-color: #B2477D;
+  border:none;
+}
+
+.btn-success:hover{
+  background-color: #FF54A9;
+  border:none;
+}
+
+
+a{
+  color: #B8A9B1;
+}
+
+// input[type="checkbox"]:checked{
+//   color: #B85C8A
+// }
 
