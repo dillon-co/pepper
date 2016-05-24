@@ -30,36 +30,6 @@
   }
 }
 
-.home-page{
-  background-image: image-url(new_zeland_thunder); 
-  background-attachment: fixed; 
-  background-size: cover;
-  background-position: center center;
-  vertical-align: top;
-  color: white;
-  margin-top: 0px;
-  background-color: rgba(0,0,0,0.5);
-  color: white; 
-  .message-row{
-    background-color: rgba(0,0,0,0.8);
-  }
-  .jumbotron{
-    border-radius: 0px;
-    background-color: rgba(0,0,0,0.5)
-  }
-  .jumbo{
-    .names{
-      float: center;
-      .girl-tron{
-        text-align: center;
-        // margin-right: 25px;
-      }
-      .boy-tron{
-        text-align: right;
-      }
-    }
-  }
-}  
 
 .footer{
   .footnote-a{
@@ -99,6 +69,40 @@ body{
     color: #99FF99;
   }
 }
+
+.home-page{
+  background-image: image-url(new_zeland_thunder); 
+  background-attachment: fixed; 
+  background-size: cover;
+  background-position: center center;
+  vertical-align: top;
+  color: white;
+  margin-top: 0px;
+  background-color: rgba(0,0,0,0.5);
+  color: white; 
+  .message-row{
+    input, textarea{
+      border-color: #99FF99; 
+    }
+    background-color: rgba(0,0,0,0.8);
+  }
+  .jumbotron{
+    border-radius: 0px;
+    background-color: rgba(0,0,0,0.5)
+  }
+  .jumbo{
+    .names{
+      float: center;
+      .girl-tron{
+        text-align: center;
+        // margin-right: 25px;
+      }
+      .boy-tron{
+        text-align: right;
+      }
+    }
+  }
+}  
 
 .btn-success{
   background-color: #B2477D;

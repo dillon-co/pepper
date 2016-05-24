@@ -1,8 +1,9 @@
 class SendToAllUsersWorker
   include Sidekiq::Worker
   def perform(team, message)
-    team.users.all.each do |user|
-      TextWorker.perform_async(user.number, message)
+    team.each do |number|
+      # TextWorker.perform_async(number, message)
+      puts "sending to #{number}"
     end 
   end
 end  

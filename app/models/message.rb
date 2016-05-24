@@ -24,7 +24,8 @@ class Message < ActiveRecord::Base
       	TextWorker.perform_async(user.number, self.message)
       end	
   	else	
-      SendToAllUsersWorker.perform_async(self.team, self.message)  
+      number_array = team.users.all.map{ |user| user.number }
+      SendToAllUsersWorker.perform_async(number_array, self.message)  
   	end
   end  
 end
