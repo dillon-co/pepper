@@ -31,6 +31,7 @@ gem 'devise'
 gem "better_errors"
 gem 'bootstrap-sass'
 gem 'annotate'
+gem 'resque', '~> 1.25', '>= 1.25.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
