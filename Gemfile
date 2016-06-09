@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'unicorn'
 gem 'sidekiq'
 gem 'twilio-ruby'
+gem "sidekiq-cron", "~> 0.3.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -16,7 +17,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem "sidekiq-cron", "~> 0.3.0"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -35,6 +35,7 @@ gem 'resque', '~> 1.25', '>= 1.25.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'pry-byebug'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -43,7 +44,6 @@ gem 'resque', '~> 1.25', '>= 1.25.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry-byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = current_team.events.new(event_params)
     if @event.save
       redirect_to events_path
     else
@@ -32,6 +32,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :date, :supplies, :description)
+    params.require(:event).permit(:title, :date, :tasks, :description)
   end
 end

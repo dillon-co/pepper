@@ -15,7 +15,7 @@ require 'text_message_worker'
 class Message < ActiveRecord::Base 
   has_and_belongs_to_many :users			
   belongs_to :team
-  after_save :send_to_users
+  after_save :send_to_users, :print_the_ids
 
   def send_to_users
   	if self.user_ids.any?
@@ -28,4 +28,9 @@ class Message < ActiveRecord::Base
       SendToAllUsersWorker.perform_async(number_array, self.message)  
   	end
   end  
+
+  def print_the_ids
+    puts self.user_ids
+  end  
+
 end
